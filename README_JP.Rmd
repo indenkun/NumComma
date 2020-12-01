@@ -1,0 +1,137 @@
+---
+output: github_document
+---
+
+<!-- README_JP.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+[English](README.md) | [日本語](README_JP.md)
+
+# NumComma
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+`{NumComma}`はR上で三桁ごとにコンマで区切られた数字とコンマで区切られていない数字とで相互変換できます。
+
+文字列中のコンマで区切られた数字や区切られていない数字を取り扱うための`*_str`関数も備えています。
+
+## Installation
+
+``` r
+remotes::install_github("indnkun/NumComma")
+```
+でインストールできます。
+
+## Example
+
+```{r example}
+library(NumComma)
+```
+
+`{NumComma}`は三桁ごとにコンマで区切られた数字をコンマで区切られていない数字に変換するための`NumComma_rm`と、数字を三桁ごとにコンマで区切られた数字（文字列）に変換するための`NumComma_add`があります。また、それぞれの関数の拡張として、文字列中の数字に対してそれぞれの変換を行う`NumComma_rm_str`と`NumComma_add_str`があります。
+
+### `NumComma_rm`と`NumComma_rm_str`
+
+`NumComma_rm`は三桁ごとにコンマで区切られた数字（文字列）をコンマを含まない数字に変換することができます。
+```{r}
+NumComma_rm("2,020")
+```
+
+コンマを含まない数字の場合はそのままの数を返します。
+```{r}
+NumComma_rm("2020")
+```
+
+小数点以下の数を含む数字も変換できます。
+```{r}
+NumComma_rm("1,234.56")
+```
+
+複数の値を受け取ることも可能です。
+```{r}
+x <- c("2,020", "2020", "1,234.56")
+NumComma_rm(x)
+```
+
+`convert`で`TRUE`を指定すると文字列ではなく数として値を返すこともできます。
+```{r}
+x <- c("2,020", "2020", "1,234.56")
+NumComma_rm(x, convert = TRUE)
+```
+
+三桁ごとにコンマで含まれた数字かコンマを含まない数字以外の値を入力すると警告文とともに入力された値をそのまま返します。
+```{r}
+NumComma_rm("1,23,456")
+NumComma_rm("NumComma_rm")
+```
+
+警告文は`Warnig.message`で`FALSE`を指定すると表示しないようにできます。
+```{r}
+NumComma_rm(c("1,23,456", "NumComma_rm"), warnig.message = FALSE)
+```
+
+`NumComma_rm_str`は文字列中の三桁ごとにコンマで区切られた数字をコンマで区切られていない数字に変換するための関数です。
+```{r}
+NumComma_rm_str("日本の総人口は2020年1月1日時点で124,271,318人です。")
+```
+
+### `NumComma_add`と`NumComma_add_str`
+
+`NumComma_add`は数字を三桁ごとにコンマで区切らた数字（文字列）に変換するための関数です。
+
+数字や数字を表す文字列を受け付けることができます。
+```{r}
+NumComma_add(123456)
+NumComma_add("123456")
+```
+
+0から始まる連続する数字を文字列として入力した場合ははそのままの値を返します。
+```{r}
+NumComma_add("0001")
+```
+
+数を表す文字列ではない文字列（コンマを含む数字を含む）を入力した場合は警告文とともに入力された値をそのまま返します。
+```{r}
+NumComma_add(c("NumComma_add", "1,234"))
+```
+
+警告文は`Warnig.message`で`FALSE`を指定すると表示しないようにできます。
+```{r}
+NumComma_add(c("NumComma_add", "1,234"), warnig.message = FALSE)
+```
+
+`digit`で指定した桁数（小数点以下を含む）以上の数字のみを三桁ごとにコンマで区切られた数字に変換することや、`small.num`で指定した数以上の数字のみを三桁ごとにコンマで区切られた数字に変換することもできます。
+```{r}
+NumComma_add(c(123456, 2020), digit = 4)
+NumComma_add(c(123456, 2020), small.num = 3000)
+```
+
+`NumComma_add_str`は文字列中の数字をコンマで区切られた数字に変換するための関数です。
+```{r}
+NumComma_add_str("日本の総人口は2020年1月1日時点で124271318人です。")
+```
+
+`NumComma_add_str`も`NumComma_add`と同様に変換する数字を引数で制御することができます。
+```{r}
+NumComma_add_str("日本の総人口は2020年1月1日時点で124271318人です。", digit = 4)
+NumComma_add_str("日本の総人口は2020年1月1日時点で124271318人です。", small.num = 3000)
+```
+
+### License
+
+MIT.
+
+### Imports
+
+* purrr
+* stringr
+* stats
