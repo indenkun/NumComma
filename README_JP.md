@@ -16,7 +16,7 @@
 ## Installation
 
 ``` r
-remotes::install_github("indnkun/NumComma")
+remotes::install_github("indenkun/NumComma")
 ```
 
 でインストールできます。

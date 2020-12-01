@@ -28,7 +28,7 @@ It also has the `*_str` function to handle comma-separated and non-comma-separat
 
 You can install it in
 ``` r
-remotes::install_github("indnkun/NumComma")
+remotes::install_github("indenkun/NumComma")
 ```
 
 ## Example

@@ -21,7 +21,7 @@ non-comma-separated numbers in a string.
 You can install it in
 
 ``` r
-remotes::install_github("indnkun/NumComma")
+remotes::install_github("indenkun/NumComma")
 ```
 
 ## Example
