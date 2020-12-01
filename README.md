@@ -10,10 +10,9 @@
 <!-- badges: end -->
 
 `{NumComma}` can convert between comma-separated and non-comma-separated
-numbers every three digits on R. It also has the `*_str` function for
-handling comma-separated and non-comma-separated numbers in a string.
+numbers every three digits on R.
 
-It also has the `*_str` function to handle comma-separated and
+It also has the `*_str` function for handling comma-separated and
 non-comma-separated numbers in a string.
 
 ## Installation
@@ -184,11 +183,11 @@ NumComma_add_str("The total population of Japan is 124271318 people as of Januar
 #> [1] "The total population of Japan is 124,271,318 people as of January 1, 2020."
 ```
 
-### License
+## License
 
 MIT.
 
-### Imports
+## Imports
 
   - purrr
   - stringr

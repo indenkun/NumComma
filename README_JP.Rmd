@@ -126,11 +126,11 @@ NumComma_add_str("日本の総人口は2020年1月1日時点で124271318人で�
 NumComma_add_str("日本の総人口は2020年1月1日時点で124271318人です。", small.num = 3000)
 ```
 
-### License
+## License
 
 MIT.
 
-### Imports
+## Imports
 
 * purrr
 * stringr
