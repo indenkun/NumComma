@@ -164,6 +164,7 @@ MIT.
 
 ## Imports
 
-  - purrr
-  - stringr
-  - stats
+  - `{purrr}`
+  - `{stringr}`
+  - `{stats}`
+  - `{dplyr}`
