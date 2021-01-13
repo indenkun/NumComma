@@ -1,7 +1,7 @@
 Package: NumComma
 Type: Package
 Title: Numbers and commas
-Version: 0.0.0.1
+Version: 0.0.0.9000
 Author: indenkun
 Maintainer: indenkun <blog@indenkun.hatenablog.com>
 Description: Remove commas from comma-separated numbers or separate numbers that
@@ -16,4 +16,6 @@ Imports:
     stats,
     dplyr
 Suggests: 
-    testthat
+    testthat,
+    spelling
+Language: en-US

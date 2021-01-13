@@ -19,11 +19,6 @@
 #' unconvertible value is returned.
 #'
 #' @rdname NumComma
-#' @importFrom purrr map
-#' @importFrom stringr str_detect
-#' @importFrom stringr str_count
-#' @importFrom stringr str_extract
-#' @importFrom stringr str_replace
 #' @importFrom dplyr %>%
 #' @return characters or numbers.
 #' @examples
@@ -79,10 +74,6 @@ NumComma_rm <- function(num, convert = FALSE, warnig.message = TRUE){
 }
 
 #' @param str str is a string.
-#' @importFrom purrr map_chr
-#' @importFrom stringr str_sub
-#' @importFrom stringr str_split
-#' @importFrom stats na.omit
 #' @rdname NumComma
 #' @export
 #'
@@ -111,7 +102,6 @@ NumComma_rm_str <- function(str){
 #' by `digit` (including the decimal point) to comma-separated numbers only.
 #' @param small.num Convert only numbers greater than the number specified in
 #' `small.num` (including decimal points) to comma-separated numbers.
-#' @importFrom stringr str_length
 #' @rdname NumComma
 #' @export
 

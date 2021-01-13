@@ -11,7 +11,7 @@ NumComma_rm(num, convert = FALSE, warnig.message = TRUE)
 
 NumComma_rm_str(str)
 
-NumComma_add(x, digit = 3, small.num = 999)
+NumComma_add(x, digit = 3, small.num = 999, warnig.message = TRUE)
 
 NumComma_add_str(str, digit = 3, small.num = 999)
 }
